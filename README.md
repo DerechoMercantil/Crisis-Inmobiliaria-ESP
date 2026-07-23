@@ -24,6 +24,17 @@ python3 graficas/scripts/generar_graficas.py                # regenera las figur
 python3 graficas/scripts/generar_interactivas.py            # regenera las versiones interactivas (HTML)
 ```
 
+## Licencia
+
+Licencia dual, según el tipo de contenido:
+
+- **Código** (`graficas/scripts/*.py`): [Licencia MIT](LICENSE).
+- **Datos, tablas, gráficas y documentación** de elaboración propia: [Creative Commons Atribución 4.0 Internacional (CC BY 4.0)](LICENSE-DATA).
+
+Los ficheros originales de terceros en `datos/brutos/` (Eurostat, OCDE, BIS, INE, Banco de España, MIVAU, BOE, Reserva Federal, Prados de la Escosura) siguen sujetos a las condiciones de sus proveedores respectivos, con independencia de lo anterior — véase `tablas/FUENTES.md` y `anexo/justificacion_propiedad_intelectual.md`.
+
+> El titular de los derechos figura en LICENSE/LICENSE-DATA como «los autores del repositorio»; sustituidlo por los nombres completos que prefiráis antes de publicar.
+
 ## Publicación
 
 - **GitHub Pages** (interactivas): en el repositorio, Settings → Pages → Deploy from branch, carpeta raíz.

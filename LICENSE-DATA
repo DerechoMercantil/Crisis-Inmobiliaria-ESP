@@ -1,0 +1,36 @@
+Esta licencia (CC BY 4.0) se aplica a los datos, tablas, gráficas y
+documentación de elaboración propia de este repositorio:
+
+  tablas/*.csv, tablas/FUENTES.md
+  datos/procesados/*
+  graficas/color/*, graficas/bn/*
+  graficas/interactivas/*  (salvo plotly.min.js, biblioteca de terceros
+                             con su propia licencia MIT de Plotly Technologies)
+  README.md
+
+Para el código (graficas/scripts/*.py), véase el fichero LICENSE (MIT).
+
+Los ficheros originales de terceros en datos/brutos/ (Eurostat, OCDE, BIS,
+INE, Banco de España, Ministerio de Vivienda y Agenda Urbana, BOE, Reserva
+Federal de EE. UU., L. Prados de la Escosura) siguen sujetos en todo caso a
+las condiciones de sus proveedores respectivos, con independencia de esta
+licencia. Véase tablas/FUENTES.md (cita y condiciones de cada fuente) y
+anexo/justificacion_propiedad_intelectual.md (razonamiento jurídico completo).
+
+--------------------------------------------------------------------------
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Los autores del repositorio
+
+This work is licensed under the Creative Commons Attribution 4.0
+International License. To view a copy of this license, visit
+https://creativecommons.org/licenses/by/4.0/ or send a letter to Creative
+Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Resumen no vinculante (no sustituye a los términos legales completos,
+disponibles en el enlace anterior): se puede copiar, distribuir, ejecutar,
+comunicar públicamente, modificar esta obra y generar obras derivadas —
+incluso con fines comerciales— siempre que se reconozca adecuadamente la
+autoría original, se enlace a esta licencia y se indique si se han
+realizado cambios.
