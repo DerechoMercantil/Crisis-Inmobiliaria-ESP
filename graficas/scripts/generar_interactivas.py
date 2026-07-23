@@ -102,6 +102,29 @@ guardar(fig, 'G01b_precio_vs_renta_indexado',
         'Índices nominales, base 1987 = 100. Serie de precio enlazada (Mº Fomento base 1987 / MIVAU 1995-).',
         'Fuente: Mº de Fomento (1987-94, en Vergés, Estadística Española 179/2012); MIVAU y Banco de España (1995-2025). Elaboración propia.')
 
+# ---------- G1bis ----------
+rows = leer('G1bis_espana_ratio_precio_rbd_anual_1971.csv')
+retro = [(int(r['anio']), float(r['precio_vivienda_en_anios_de_rbd_hogar_mediano']))
+         for r in rows if r['metodo'].startswith('retropolación')]
+oficial = [(int(r['anio']), float(r['precio_vivienda_en_anios_de_rbd_hogar_mediano']))
+           for r in rows if r['metodo'] == 'serie oficial BdE' and int(r['anio']) <= 2025]
+xr, yr = zip(*retro)
+xo, yo = zip(*oficial)
+xr, yr = list(xr) + [xo[0]], list(yr) + [yo[0]]
+fig = fig_base('Años de renta bruta del hogar mediano')
+fig.add_trace(go.Scatter(x=xr, y=yr, name='Retropolación 1971-1986 (BIS y Prados de la Escosura)',
+                         mode='lines', line=dict(color=COLOR[0], width=2.2, dash='dash'),
+                         hovertemplate='%{y:,.2f} años<extra>Retropolación</extra>'))
+fig.add_trace(go.Scatter(x=xo, y=yo, name='Serie oficial del Banco de España (1987-2025)',
+                         mode='lines', line=dict(color=COLOR[0], width=2.4),
+                         hovertemplate='%{y:,.2f} años<extra>Serie oficial BdE</extra>'))
+fig.update_yaxes(range=[0, 10])
+guardar(fig, 'G01bis_ratio_precio_renta_espana_1971',
+        'Medio siglo de precio de la vivienda, en años de renta del hogar mediano (España)',
+        'Precio medio de una vivienda libre de 93,75 m² construidos / renta bruta anual del hogar mediano. 1971-2025. '
+        'Tramo 1971-1986 retropolado: precios BIS enlazados a la serie de Fomento; renta según Prados de la Escosura y hogares censales (método de G10).',
+        'Fuente: Banco de España (SI_1_5.43, 1987-); BIS, Selected residential property prices; Prados de la Escosura (2017, act. 2025); censos INE. Elaboración propia.')
+
 # ---------- G2 / G2b ----------
 PAISES = [('Espana', 'España', 0), ('Italia', 'Italia', 1), ('ReinoUnido', 'Reino Unido', 2),
           ('Hungria', 'Hungría', 3), ('ZonaEuro', 'Zona euro', 4)]

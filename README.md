@@ -12,7 +12,9 @@ Repositorio de ciencia abierta con los datos, tablas, scripts y gráficas que ac
 - `graficas/color/` — figuras en color (PNG 300 ppp + SVG) para difusión.
 - `graficas/bn/` — figuras en blanco y negro (trazos y tramas, PNG 300 ppp + SVG) para la edición impresa.
 - `graficas/interactivas/` — versiones interactivas (HTML + Plotly): el valor exacto aparece al pasar el cursor; `index.html` es la galería. Funcionan abriendo el fichero en el navegador o publicadas en GitHub Pages.
-- `graficas/scripts/` — scripts reproducibles: `generar_graficas.py` (figuras estáticas), `generar_interactivas.py` (versiones HTML), `estilo.py` (sistema de estilo) y `g5_ecv_transferencia_alquiler.py` (procesado de microdatos ECV).
+- `graficas/scripts/` — scripts reproducibles: `generar_graficas.py` (figuras estáticas), `generar_interactivas.py` (versiones HTML), `estilo.py` (sistema de estilo), `g5_ecv_transferencia_alquiler.py` (procesado de microdatos ECV) y `g1bis_retropolacion_1971.py` (retropolación 1971-1986 de la Gráfica 1bis).
+
+> Nota: la Gráfica 1bis (serie extendida 1971-2025) aún no tiene comentario en `anexo/comentarios_graficas.md`; el resto de gráficas sí.
 
 ## Reproducibilidad
 

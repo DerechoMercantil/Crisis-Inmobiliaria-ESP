@@ -71,6 +71,40 @@ def g1b(modo):
     guardar(fig, 'G01b_precio_vs_renta_indexado', modo)
 
 
+def g1bis(modo):
+    rows = leer('G1bis_espana_ratio_precio_rbd_anual_1971.csv')
+    retro = [(int(r['anio']), float(r['precio_vivienda_en_anios_de_rbd_hogar_mediano']))
+             for r in rows if r['metodo'].startswith('retropolación')]
+    oficial = [(int(r['anio']), float(r['precio_vivienda_en_anios_de_rbd_hogar_mediano']))
+               for r in rows if r['metodo'] == 'serie oficial BdE' and int(r['anio']) <= 2025]
+    color = estilo.COLOR[0] if modo == 'color' else '#000000'
+    xr, yr = zip(*retro)
+    xo, yo = zip(*oficial)
+    # se añade 1987 al tramo retropolado para que el trazo discontinuo enlace sin salto visual
+    xr, yr = list(xr) + [xo[0]], list(yr) + [yo[0]]
+    fig, ax = nueva_figura()
+    ax.plot(xr, yr, color=color, linestyle='--', linewidth=1.9,
+            label='Retropolación 1971-1986 (BIS y Prados de la Escosura)')
+    ax.plot(xo, yo, color=color, linestyle='-', linewidth=2.2,
+            label='Serie oficial del Banco de España (1987-2025)')
+    hitos = dict(zip(list(xr) + list(xo), list(yr) + list(yo)))
+    for anio, dy in [(1982, -0.55), (1997, -0.55), (2007, 0.4)]:
+        ax.annotate(fmt(hitos[anio]), xy=(anio, hitos[anio]), xytext=(anio, hitos[anio] + dy),
+                    ha='center', fontsize=8.5, color=estilo.TINTA_2, fontweight='bold')
+    ax.annotate(fmt(yo[-1]), xy=(xo[-1], yo[-1]), xytext=(xo[-1] + 0.6, yo[-1]),
+                fontsize=8.5, color=estilo.TINTA_2, fontweight='bold', va='center')
+    ax.set_ylim(0, 10)
+    ax.set_xlim(1969, 2029)
+    titulos(fig, ax,
+            'Medio siglo de precio de la vivienda, en años de renta del hogar mediano (España)',
+            'Precio medio de una vivienda libre de 93,75 m² construidos / renta bruta anual del hogar mediano. 1971-2025.\n'
+            'Tramo 1971-1986 retropolado: precios BIS enlazados a la serie de Fomento; renta según Prados de la Escosura y hogares censales (método de G10).',
+            'Fuente: Banco de España (SI_1_5.43, 1987-); BIS, Selected residential property prices; Prados de la Escosura (2017, act. 2025); censos INE. Elaboración propia.')
+    leyenda(ax, loc='upper left')
+    fig.subplots_adjust(top=0.78, bottom=0.12)
+    guardar(fig, 'G01bis_ratio_precio_renta_espana_1971', modo)
+
+
 PAISES = [('Espana', 'España', 0), ('Italia', 'Italia', 1), ('ReinoUnido', 'Reino Unido', 2),
           ('Hungria', 'Hungría', 3), ('ZonaEuro', 'Zona euro', 4)]
 
@@ -345,7 +379,7 @@ def g10(modo):
     guardar(fig, 'G10_vpo_en_anios_de_renta', modo)
 
 
-TODAS = [g1, g1b, g3, g4, g5, g6, g7, g8a, g8b, g9, g10]
+TODAS = [g1, g1b, g1bis, g3, g4, g5, g6, g7, g8a, g8b, g9, g10]
 
 if __name__ == '__main__':
     for modo in ('color', 'bn'):

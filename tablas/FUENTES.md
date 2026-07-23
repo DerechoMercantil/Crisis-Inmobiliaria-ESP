@@ -11,6 +11,16 @@ Los ficheros brutos originales están en `datos/brutos/`; las series limpias en 
 - **URL**: https://www.bde.es/webbe/es/estadisticas/compartido/datos/csv/si_1_5.csv
 - Complemento disponible: serie SI_1_5.44 «esfuerzo teórico anual» (% de renta destinado a cuotas el primer año), misma fuente y periodo (`datos/procesados/bde_esfuerzo_teorico.csv`).
 
+## G1bis_espana_ratio_precio_rbd_anual_1971.csv (Gráfica 1bis, serie extendida 1971-2025)
+
+- **Serie**: la misma ratio de G1 (precio de la vivienda en años de renta bruta del hogar mediano), con el tramo 1971-1986 retropolado. La columna `metodo` identifica el origen de cada año.
+- **Tramo 1987-2026**: serie oficial BdE, idéntica a G1.
+- **Tramo 1971-1986 (retropolación, script `graficas/scripts/g1bis_retropolacion_1971.py`)**:
+  - *Numerador*: precio del m² de 1987 (327 €/m², Fomento, tabla G1b) retropolado con el índice nominal del BIS, *Selected residential property prices* (WS_SPP, serie de España, media anual de trimestres), × 93,75 m².
+  - *Denominador*: renta bruta del hogar mediano de 1987 (9.913 €, implícita en la serie BdE, tabla G1b) retropolada con la NNDI nominal por hogar — mismo método aprobado para el denominador 1979-1986 de G10 (Prados de la Escosura, Tabla 2; hogares = viviendas principales censales INE 1970/1981/1991, interpolación log-lineal). La reproducción de la renta 1979-1986 coincide exactamente con la de G10.
+- **Columna `ratio_contraste_ocde`** (solo 1971-1986): la misma ratio retropolada con el índice *price-to-income* de la OCDE (HPI_YDH, España) encadenado en 1987. Diferencia máxima con la serie principal: 0,25 años (1981). Se descartó como método principal porque la OCDE usa renta disponible **por persona**, no por hogar: en el solapamiento 1987-2025 esa diferencia de concepto acumula desviaciones grandes (2007: 6,1 frente al 9,4 oficial), al crecer el número de hogares más deprisa que la población.
+- **Advertencia para la nota al pie**: el tramo retropolado combina un índice de precios de cobertura limitada en los setenta con una renta media por hogar (no mediana); es una aproximación académica, no estadística oficial, y así se distingue (trazo discontinuo) en la gráfica G01bis.
+
 ## G2_ratio_precio_renta_anual.csv (Gráfica 2, comparativa)
 
 - **Serie**: *Price-to-income ratio* (índice 2015 = 100). España, Italia, Reino Unido, Hungría y zona euro (EA).
