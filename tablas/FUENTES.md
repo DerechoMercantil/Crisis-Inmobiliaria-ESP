@@ -131,3 +131,47 @@ De BdE *Síntesis de Indicadores* cuadro 1.5 (`datos/procesados/`):
 
 ### Nota G2b
 La OCDE no publica el ratio estandarizado (HPI_YDH_AVG) para Hungría (serie demasiado corta): la gráfica G2b compara España, Italia, Reino Unido y zona euro. Hungría sí aparece en G2 (índice, desde 2007) y en G4 (precios reales, desde 1992).
+
+---
+
+# Segunda entrega: nuevos grupos de datos (N1-N6), agosto de 2026
+
+## N1_espana_vpo_franquismo_anual.csv y N1_plazos_regimen_proteccion.csv (VPO del franquismo)
+
+- **Serie**: viviendas acogidas a la protección del Estado, terminadas (calificación definitiva), 1958-1975, total nacional.
+- **Fuente**: Anuarios Estadísticos de España (INE, fondo documental digitalizado, inebaseweb), cuadros «Edificación y vivienda — Viviendas acogidas a la protección del Estado»: Anuario 1965 (datos 1958-1964), Anuario 1971 (1963-1970) y Anuario 1976 (1967-1975). PDFs originales en `datos/brutos/ine_anuario*_viv*.pdf`. Descargado 2026-08-07.
+- **Validación cruzada**: los años de solapamiento coinciden entre anuarios (1963-64, 1967-69 exactos; 1970: 185.290 vs 185.294, discrepancia de 4 viviendas que se documenta; se toma el dato del anuario más reciente).
+- **Límites**: (1) el tramo 1950-1957 no se incluye: corresponde a regímenes anteriores no homologables (viviendas protegidas de la Ley de 19-4-1939 y bonificables del D.-L. de 19-11-1948) cuyos cuadros no están expuestos con título identificable en los anuarios digitalizados 1955-1961; se tratará con hitos en el texto. (2) El desglose territorial histórico es provincial y no se ha extraído (decisión de equipo: serie nacional). Contexto adicional disponible: cuadro provincial de la Fiscalía Superior de la Vivienda con promedios 1941-55 (`ine_anuario1958_viv0.pdf`).
+- **Plazos del régimen de protección** (N1_plazos_regimen_proteccion.csv): no existe estadística de descalificaciones efectivas; la tabla recoge la duración LEGAL del régimen por periodo de calificación. Verificado sobre texto BOE: Reglamento D. 2114/1968, arts. 100 y 146 (50 años desde la calificación definitiva, extinción automática por transcurso; BOE-A-1968-1060) y RD-L 31/1978, art. 1 (30 años; BOE-A-1978-27765). Los regímenes de 1939 y 1954 (beneficios ~20 años) quedan pendientes de verificación literal sobre la Gazeta histórica y así se indica en la propia tabla.
+
+## N2_espana_vpo_por_promotor_anual.csv (VPO por tipo de promotor)
+
+- **Series**: calificaciones definitivas y provisionales de vivienda protegida por tipo de promotor (privado/público), planes estatales y autonómicos. Sumas anuales de series mensuales, 2014-2026.
+- **Fuente**: Boletín estadístico online MITMS/MIVAU (apps.fomento.gob.es/boletinonline2), cuadros 1.6.2.1/1.6.2.2 (definitivas) y 1.3.2.1/1.3.2.2 (provisionales); ficheros sedal 31206010/20 y 31203010/20. Descargado 2026-08-07. Script: `graficas/scripts/n_series_boletin_mitms.py`.
+- **Límites y descartes documentados**: (1) el desglose mensual por promotor solo se publica desde 2014; la ampliación 1991-2013 exigiría el Boletín anual del Observatorio de Vivienda y Suelo (pendiente). (2) Se DESCARTÓ el cuadro 7 de visados de aparejadores («viviendas según clase de promotor», 1991-) porque su nota metodológica advierte que las obras promovidas por el Estado, las CCAA y las corporaciones locales no se visan en dichos colegios: la serie no capta a la Administración y no sirve para este desglose.
+
+## N3_espana_destinos_pms_2004.csv (patrimonios municipales de suelo)
+
+- **Serie**: distribución porcentual de los destinos de los bienes y recursos de los Patrimonios Municipales de Suelo, ejercicio 2004 (muestra: capitales de provincia, municipios >100.000 hab. y los cinco mayores >20.000 de cada CCAA).
+- **Fuente**: Tribunal de Cuentas, *Informe de fiscalización de la gestión y control de los recursos integrantes del Patrimonio Municipal del Suelo, ejercicio 2004* (aprobado por el Pleno el 26-6-2008; Resolución de la Comisión Mixta de 8-10-2008), publicado en BOE núm. 33, de 7-2-2009, BOE-A-2009-2122 (PDF en `datos/brutos/tcu_pms_2004_boe.pdf`).
+- **Contexto**: no existe estadística nacional continua de los PMS ni del suelo de cesión obligatoria (10 % del aprovechamiento) pendiente de desarrollo — verificado y documentado; esta foto fija oficial es el mejor dato disponible (decisión de equipo, 2026-08-07). Datos complementarios del mismo informe: solo 21 ayuntamientos (14,6 % de los fiscalizados) tenían el PMS formalmente constituido a 31-12-2004.
+
+## N4_espana_coste_construccion_vs_precio.csv (costes de construcción vs precio de venta)
+
+- **Series**: presupuesto de ejecución material (PEM) por m² de la edificación residencial visada (obra nueva) frente al precio de venta del m² de vivienda libre; y residual = precio − PEM. Anual 1992-2025.
+- **Fuentes**: visados de dirección de obra de los Colegios de Aparejadores (Boletín estadístico MITMS, cuadros 9.2 superficie y 9.3 presupuesto, ficheros sedal 09010200/09010300; reconstrucción anual por suma de los 12 meses, validada contra el bloque anual del fichero donde existe y por identidad contable residencial = suma de componentes en todos los años); precio de venta: serie enlazada de G1b (Fomento base 1987/MIVAU). Script: `graficas/scripts/n4_n5_costes_visados.py`.
+- **Definición y advertencia**: el PEM excluye IVA, honorarios facultativos, gastos generales, beneficio del contratista, costes financieros y suelo (definición oficial de la nota metodológica MITMS). El residual precio−PEM comprende suelo + márgenes + costes no-PEM: es una COTA SUPERIOR de la repercusión del suelo, no el suelo aislado (método aprobado por el equipo como complemento).
+- Lectura clave: el PEM era el 36 % del precio de venta a mediados de los noventa, cayó al 18,5 % en 2006 (residual suelo+márgenes: 81,5 %) y ronda el 31-33 % desde 2014.
+- Complemento disponible: Índice de Costes del Sector de la Construcción (bases 2005/2010/2015, ficheros mitms_38010000/41010000/48010000/57010000.xls, cobertura 2005-2023), sin desglose incorporado por venir los XLS sin rótulos de columna; pendiente si el equipo lo requiere.
+
+## N5_espana_precio_suelo_anual.csv (precio del suelo urbano)
+
+- **Series**: precio medio del m² de suelo urbano en transacciones, total nacional y municipios de más de 50.000 habitantes. Medias anuales de datos trimestrales (solo años completos), 2004-2025.
+- **Fuente**: Estadística de Precios de Suelo Urbano (MITMS/MIVAU), Boletín estadístico online, cuadros 4 y 4.5 (sedal 36400500 y 36403000). Descargado 2026-08-07. Script: `graficas/scripts/n_series_boletin_mitms.py`.
+- **Advertencia de composición**: es precio medio de lo TRANSACCIONADO cada año (la mezcla de ubicaciones y calidades varía con el ciclo); la caída posterior a 2007 en municipios grandes refleja también el desplazamiento de las transacciones hacia suelos peores. No existe estadística oficial anterior a 2004.
+
+## N6_espana_iniciadas_por_decadas.csv y N6_espana_terminadas_anual.csv (viviendas construidas por décadas)
+
+- **Series**: (a) viviendas iniciadas libres y protegidas agregadas por décadas 1976-2025 (de las series mensuales BdE/MIVAU ya documentadas en G8a; solo años con 12 meses); (b) viviendas terminadas anuales 1991-2025: libres (cuadro 3.2 del Boletín, sedal 32201000) y VPO (calificaciones definitivas, cuadro 1.6, sedal 31306000 — la nota oficial de la tabla indica que es la serie antes titulada «viviendas protegidas terminadas»).
+- **Fuente**: Mº de Vivienda y Agenda Urbana / MITMS, Boletín estadístico online. Script: `graficas/scripts/n_series_boletin_mitms.py`.
+- Lectura clave: la VPO fue el 71,8 % de lo iniciado en 1976-1985 (1,44 millones de viviendas) y es el 12,2 % en 2016-2025 (129.000).
