@@ -117,6 +117,26 @@ guardar(fig, 'N04_coste_vs_precio',
         'El PEM excluye IVA, honorarios, suelo y márgenes.',
         'Fuente: MITMS, visados de dirección de obra (cuadros 9.2-9.3); Mº Fomento/MIVAU y BdE. Elaboración propia.')
 
+# ---------- N4b ----------
+rows = leer('N4b_espana_indices_costes_materiales.csv')
+x = [int(r['anio']) for r in rows]
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=x, y=[float(r['coste_total_residencial']) for r in rows],
+                         name='Coste total residencial', mode='lines',
+                         line=dict(color=TINTA, width=3.0),
+                         hovertemplate='%{y:,.1f}<extra>Coste total</extra>'))
+for i, (col, etq) in enumerate([('mano_de_obra', 'Mano de obra'), ('cemento', 'Cemento'),
+                                ('acero', 'Acero'), ('madera', 'Madera'),
+                                ('ceramica', 'Cerámica')]):
+    fig.add_trace(go.Scatter(x=x, y=[float(r[col]) for r in rows], name=etq, mode='lines',
+                             line=dict(color=COLOR[i], width=2.0),
+                             hovertemplate='%{y:,.1f}<extra>' + etq + '</extra>'))
+fig.update_layout(yaxis_title='Índice de costes (2005 = 100)')
+guardar(fig, 'N04b_indices_costes_materiales',
+        'Qué encareció construir: acero y energía, no la mano de obra',
+        'Índice de Costes del Sector de la Construcción, componentes seleccionados, 2005-2023 (2005 = 100). El acero llegó a +176% en 2022.',
+        'Fuente: MITMS, Índice de Costes del Sector de la Construcción, base 2015 (cuadros 1 y 2.1-2.2). Elaboración propia.')
+
 # ---------- N5 ----------
 rows = leer('N5_espana_precio_suelo_anual.csv')
 x = [int(r['anio']) for r in rows]

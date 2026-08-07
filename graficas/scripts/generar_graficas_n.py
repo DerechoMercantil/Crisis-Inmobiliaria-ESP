@@ -138,6 +138,35 @@ def n4(modo):
     guardar(fig, 'N04_coste_vs_precio', modo)
 
 
+def n4b(modo):
+    rows = leer('N4b_espana_indices_costes_materiales.csv')
+    x = [int(r['anio']) for r in rows]
+    series = [('mano_de_obra', 'Mano de obra'), ('cemento', 'Cemento'),
+              ('acero', 'Acero'), ('madera', 'Madera'), ('ceramica', 'Cerámica')]
+    fig, ax = nueva_figura()
+    tot = [float(r['coste_total_residencial']) for r in rows]
+    if modo == 'color':
+        ax.plot(x, tot, color=estilo.TINTA, linewidth=2.6, label='Coste total residencial')
+    else:
+        ax.plot(x, tot, color='#0b0b0b', linewidth=2.6, label='Coste total residencial')
+    for i, (col, etq) in enumerate(series):
+        serie(ax, x, [float(r[col]) for r in rows], i, modo, etq, marcador=True, cada=3)
+    i22 = x.index(2022)
+    ax.annotate(fmt(float(rows[i22]['acero']), 0), xy=(2022, float(rows[i22]['acero'])),
+                xytext=(2019.8, 268), fontsize=8.5, color=estilo.TINTA_2, fontweight='bold')
+    ax.set_ylabel('Índice de costes (2005 = 100)', fontsize=9, color=estilo.TINTA_2)
+    ax.set_xticks(range(2005, 2024, 2))
+    titulos(fig, ax,
+            'Qué encareció construir: acero y energía, no la mano de obra',
+            'Índice de Costes del Sector de la Construcción, componentes seleccionados, 2005-2023 (2005 = 100).\n'
+            'Coste total de la edificación residencial en trazo grueso; el acero llegó a +176% en 2022.',
+            'Fuente: MITMS, Índice de Costes del Sector de la Construcción, base 2015 (cuadros 1 y 2.1-2.2 del Boletín estadístico). Elaboración propia.')
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.08), ncol=3, frameon=False,
+              fontsize=9, labelcolor=estilo.TINTA_2, handlelength=2.2)
+    fig.subplots_adjust(top=0.78, bottom=0.19)
+    guardar(fig, 'N04b_indices_costes_materiales', modo)
+
+
 def n5(modo):
     rows = leer('N5_espana_precio_suelo_anual.csv')
     x = [int(r['anio']) for r in rows]
@@ -191,7 +220,7 @@ def n6(modo):
     guardar(fig, 'N06_decadas_libres_protegidas', modo)
 
 
-TODAS_N = [n1, n2, n3, n4, n5, n6]
+TODAS_N = [n1, n2, n3, n4, n4b, n5, n6]
 
 if __name__ == '__main__':
     for modo in ('color', 'bn'):
