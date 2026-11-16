@@ -1,0 +1,31 @@
+metodo,clase,banco,exposicion_mill_eur,apr_mill_eur,densidad_apr_pct
+IRB,Hipotecas (minoristas garantizadas con inmuebles),Santander,285552,43463,15.2
+IRB,Hipotecas (minoristas garantizadas con inmuebles),BBVA,63391,13731,21.7
+IRB,Hipotecas (minoristas garantizadas con inmuebles),CaixaBank,156255,29352,18.8
+IRB,Hipotecas (minoristas garantizadas con inmuebles),Sabadell,82907,11846,14.3
+IRB,Hipotecas (minoristas garantizadas con inmuebles),Bankinter,27874,4526,16.2
+IRB,Hipotecas (minoristas garantizadas con inmuebles),Unicaja,29886,5229,17.5
+IRB,Hipotecas (minoristas garantizadas con inmuebles),Total bancos españoles,645866,108147,16.7
+IRB,Financiación especializada,Santander,20709,13419,64.8
+IRB,Financiación especializada,BBVA,11710,8082,69.0
+IRB,Financiación especializada,CaixaBank,24538,17227,70.2
+IRB,Financiación especializada,Sabadell,5267,4005,76.0
+IRB,Financiación especializada,Bankinter,606,489,80.7
+IRB,Financiación especializada,Total bancos españoles,62830,43222,68.8
+IRB,Empresas,Santander,215907,109485,50.7
+IRB,Empresas,BBVA,167458,86657,51.7
+IRB,Empresas,CaixaBank,131580,85821,65.2
+IRB,Empresas,Sabadell,43905,21580,49.2
+IRB,Empresas,Bankinter,20434,11342,55.5
+IRB,Empresas,Total bancos españoles,579285,314886,54.4
+Estándar,Garantizadas con inmuebles y AUE,Santander,92538,34003,36.7
+Estándar,Garantizadas con inmuebles y AUE,BBVA,37662,16918,44.9
+Estándar,Garantizadas con inmuebles y AUE,CaixaBank,3827,3003,78.5
+Estándar,Garantizadas con inmuebles y AUE,Sabadell,4189,2368,56.5
+Estándar,Garantizadas con inmuebles y AUE,Bankinter,12537,4018,32.0
+Estándar,Garantizadas con inmuebles y AUE,Unicaja,1913,1030,53.8
+Estándar,Garantizadas con inmuebles y AUE,Kutxabank,32133,9758,30.4
+Estándar,Garantizadas con inmuebles y AUE,Ibercaja,19579,6474,33.1
+Estándar,Garantizadas con inmuebles y AUE,Abanca,22099,9188,41.6
+Estándar,Garantizadas con inmuebles y AUE,Cajamar (BCC),17309,6252,36.1
+Estándar,Garantizadas con inmuebles y AUE,Total bancos españoles,243787,93012,38.2

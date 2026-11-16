@@ -1,0 +1,13 @@
+periodo,grupo,n_muestra,esfuerzo_alquiler_mediano_pct,pct_esfuerzo_sup_40,pct_pobreza_antes_vivienda,pct_pobreza_tras_vivienda,renta_equivalente_mediana_eur2024
+"2005-2007 (base 2004, corregida)",Todos,555,26.9,25.7,20.4,48.2,18555
+"2005-2007 (base 2004, corregida)",Zona densamente poblada,320,30.0,32.4,17.4,50.9,18978
+"2005-2007 (base 2004, corregida)",Hogar unipersonal,155,35.2,36.5,16.1,53.2,19480
+2008-2010,Todos,809,31.4,32.9,28.8,56.4,16541
+2008-2010,Zona densamente poblada,482,33.4,36.8,23.8,55.1,17831
+2008-2010,Hogar unipersonal,184,39.7,48.8,18.9,57.8,18036
+2014-2016,Todos,856,29.7,35.4,30.9,57.6,13620
+2014-2016,Zona densamente poblada,526,29.7,33.7,24.2,53.3,15576
+2014-2016,Hogar unipersonal,184,42.4,55.2,28.2,67.0,14690
+2022-2025,Todos,1790,27.2,23.6,21.4,49.4,18236
+2022-2025,Zona densamente poblada,1101,28.2,26.4,17.7,45.3,19911
+2022-2025,Hogar unipersonal,618,33.9,35.1,16.2,58.8,17786

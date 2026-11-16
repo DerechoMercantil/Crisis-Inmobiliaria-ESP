@@ -1,26 +1,3 @@
-# Texto narrativo del anexo: destinado al libro (Aranzadi), se excluye del
-# repositorio público hasta la publicación. Ver conversación 2026-07-17.
-anexo/
-
-# Gráficos de inspiración de terceros (capturas de prensa/redes sociales usadas
-# solo como referencia interna): NO son datos propios reutilizables, son obras
-# ajenas con su propio régimen de derechos. No se publican.
-graficos/
-
-# Microdatos ECV en bruto: ~350 MB, en 6 formatos redundantes (zip, CSV, SAS,
-# SPSS, STATA, tab). Se excluyen por tamaño y porque son 100% reproducibles
-# descargando de la URL documentada en tablas/FUENTES.md. Solo se versiona la
-# tabla ya agregada (tablas/G5_*.csv) y el script que los procesa.
-datos/brutos/ecv_2025.zip
-datos/brutos/ecv_2025/
-
-# Transcripción de la reunión de trabajo y propuesta interna: contienen
-# conversación personal y planificación interna del libro, no destinadas a
-# publicación. Ver conversación 2026-07-17.
-manolo-max-dani-13-julio.md
-propuesta-graficas.md
-
-# Basura habitual de macOS / Python
 .DS_Store
 __pycache__/
 *.pyc

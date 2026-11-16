@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Si emplea estos datos, gráficos o programas, cítelos como se indica a continuación."
+type: dataset
+title: "Datos, gráficos y programas de «La Crisis Inmobiliaria Española: Un Estudio Interdisciplinario desde el Análisis Económico del Derecho»"
+version: "1.0"
+doi: "10.5281/zenodo.24287542"
+authors:
+  - family-names: "Raya-Quero"
+    given-names: "Daniel"
+    affiliation: "Universidad de Granada"
+    orcid: "https://orcid.org/0000-0002-5003-6963"
+  - family-names: "Castilla Cubillas"
+    given-names: "Manuel"
+    affiliation: "Universidad de Granada"
+    orcid: "https://orcid.org/0000-0001-8651-4544"
+license:
+  - CC-BY-4.0
+  - MIT
+repository-code: "https://github.com/DerechoMercantil/Crisis-Inmobiliaria-ESP"
+keywords:
+  - vivienda
+  - acceso a la vivienda
+  - precio de la vivienda
+  - renta por edad
+  - transferencia intergeneracional
+  - crédito inmobiliario
+  - análisis económico del derecho
+  - España

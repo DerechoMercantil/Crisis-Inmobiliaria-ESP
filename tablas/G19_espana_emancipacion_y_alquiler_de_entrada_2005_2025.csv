@@ -1,0 +1,5 @@
+panel,transiciones,n_jovenes_con_padres,n_emancipaciones,tasa_emancipacion_anual_pct,destino_alquiler_mercado_pct,destino_propiedad_hipoteca_pct,destino_propiedad_sin_hipoteca_pct,destino_otros_pct,n_entrantes_alquiler,alquiler_entrada_mediano_eur2024,esfuerzo_entrada_mediano_pct,renta_hogar_entrante_mensual_mediana_eur2024,n_incumbentes,alquiler_incumbente_mediano_eur2024,ratio_entrada_incumbente
+2005-2008,2005-2008,7067,236,3.0,22.8,58.1,10.3,8.8,58,534,30.8,1542,289,625,0.85
+2009-2012,2009-2012,6322,133,2.3,34.8,42.1,9.2,13.9,48,612,35.7,1881,349,591,1.04
+2015-2018,2015-2018,4990,78,1.7,56.1,15.4,8.8,19.7,40,485,26.8,1781,331,546,0.89
+2022-2025,2022-2025,11897,133,1.3,64.6,16.2,6.5,12.7,71,514,30.8,1614,523,560,0.92

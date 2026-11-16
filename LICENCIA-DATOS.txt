@@ -1,0 +1,34 @@
+Esta licencia (CC BY 4.0) se aplica a los datos, tablas, gráficos y
+documentación de elaboración propia de este depósito:
+
+  graficos_impresos/*, graficos_complementarios/*
+      (salvo plotly.min.js, biblioteca de terceros con su propia licencia
+      MIT de Plotly Technologies)
+  tablas/*.csv, tablas/FUENTES.md
+  datos_fuente/procesados/*
+  LEEME.md
+
+Para los programas (programas/**/*.py), véase LICENCIA-CODIGO.txt (MIT).
+
+Los ficheros originales de terceros de datos_fuente/ (Banco de España,
+Instituto Nacional de Estadística, Banco Central Europeo) siguen sujetos en
+todo caso a las condiciones de sus proveedores respectivos, con
+independencia de esta licencia. Véase tablas/FUENTES.md.
+
+--------------------------------------------------------------------------
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Daniel Raya-Quero y Manuel Castilla Cubillas
+
+This work is licensed under the Creative Commons Attribution 4.0
+International License. To view a copy of this license, visit
+https://creativecommons.org/licenses/by/4.0/ or send a letter to Creative
+Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Resumen no vinculante (no sustituye a los términos legales completos,
+disponibles en el enlace anterior): se puede copiar, distribuir, ejecutar,
+comunicar públicamente, modificar esta obra y generar obras derivadas
+—incluso con fines comerciales— siempre que se reconozca adecuadamente la
+autoría original, se enlace a esta licencia y se indique si se han
+realizado cambios.
